@@ -14,6 +14,10 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        name = "CurseMaven"
+        url = "https://cursemaven.com"
+    }
 }
 
 base {
@@ -66,6 +70,13 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 configurations {
     runtimeClasspath.extendsFrom localRuntime
+}
+
+dependencies {
+    implementation "curse.maven:minecolonies-245506:6443521"
+    implementation "curse.maven:domum_ornamentum-527361:6335398"
+    implementation "curse.maven:structurize-298744:6488875"
+    implementation "curse.maven:blockui-522992:6367809"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
